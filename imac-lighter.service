@@ -1,0 +1,10 @@
+[Unit]
+Description=iMac screen backlight on the ambient light
+Documentation=https://github.com/vitacell/imac-lighter
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/imac-lighter-ambient
+
+[Install]
+WantedBy=multi-user.target 
