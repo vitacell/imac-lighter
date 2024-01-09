@@ -6,8 +6,8 @@ https://github.com/harttle/macbook-lighter/
 
 Internally, imac-lighter reads the following files:
 
-* /sys/devices/platform/applesmc.768/light 		# ambient light sensor
-* /sys/class/backlight/acpi_video0/brightness		# video brightness
+* /sys/devices/platform/applesmc.768/light 		    # ambient light sensor
+* /sys/class/backlight/acpi_video0/brightness		  # video brightness
 * /sys/class/backlight/acpi_video0/max_brightness	# maximum brightness
 
 
