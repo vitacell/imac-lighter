@@ -6,9 +6,9 @@ https://github.com/harttle/macbook-lighter/
 
 Internally, imac-lighter reads the following files:
 
-* /sys/devices/platform/applesmc.768/light 		    # ambient light sensor
-* /sys/class/backlight/acpi_video0/brightness		  # video brightness
-* /sys/class/backlight/acpi_video0/max_brightness	# maximum brightness
+* /sys/devices/platform/applesmc.768/light 		      # ambient light sensor
+* /sys/class/backlight/acpi_video0/brightness		    # video brightness
+* /sys/class/backlight/acpi_video0/max_brightness	  # maximum brightness
 
 
 ---------------------------------------------------------------------------------------------
@@ -21,8 +21,11 @@ https://wiki.archlinux.org/title/Kernel_parameters
 For dirty fast, just add some of these lines (test one by one, util one works for you):
 
 acpi_backlight=native
+
 acpi_backlight=video
+
 acpi_backlight=vendor
+
 acpi_backlight=none
 
 into /etc/default/grub file, line "GRUB_CMDLINE_LINUX_DEFAULT".
