@@ -89,4 +89,4 @@ imac-lighter-ambient
 
 ## Tested iMacs Versions:
 
-* iMac late 2015 4K i5, ArchLinux, Xfce4 on Xorg/X11, LY as display manager.
+* iMac late 2015 4K i5, ArchLinux, Xfce4 on Xorg/X11, LY as display manager, acpi_backlight=video.
