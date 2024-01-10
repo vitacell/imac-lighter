@@ -6,12 +6,13 @@ https://github.com/harttle/macbook-lighter/
 
 Internally, imac-lighter reads the following files:
 
-* /sys/devices/platform/applesmc.768/light 		      # ambient light sensor
-* /sys/class/backlight/acpi_video0/brightness		    # video brightness
-* /sys/class/backlight/acpi_video0/max_brightness	  # maximum brightness
+* /sys/devices/platform/applesmc.768/light 		       # ambient light sensor
+* /sys/class/backlight/acpi_video0/brightness		     # video brightness
+* /sys/class/backlight/acpi_video0/max_brightness	   # maximum brightness
 
 
 ---------------------------------------------------------------------------------------------
+
 So you're expected to install corresponding Nvidia/Intel drivers first.
 
 Sometimes, some GNU/Linux distros use newer Linux versions, those have too much regressions after Linux 5.15. If you have screen's no backlight controls, missing sliders, and your power manager fails to recognize the backlight... you might need to add a specific "acpi_backlight" kernel parameter because of regressions, please read:
@@ -36,10 +37,12 @@ Then update your bootloader. For grub usually is, then reboot the iMac:
 grub-mkconfig -o /boot/grub/grub.cfg
 
 For manual backlight adjusting, make sure you have a power manager installed (in Xfce is "xfce4-power-manager").
+
 ---------------------------------------------------------------------------------------------
 
 
 ---------------------------------------------------------------------------------------------
+
 !! For other iMac model, you maybe need to replace brightness directory in /sys/class/brightness, in the imac-lighter program files.
 
 Find your backlight directory/directories with this command:
@@ -49,10 +52,12 @@ some of them, is your actual backlight controlling files, you might want to manu
 
 (putting the backling at 10%):
 sudo sh -c 'echo 10 > /sys/class/backlight/PUT_HERE_YOUR_BACKLIGHT_FOLDER/brightness'
+
 ---------------------------------------------------------------------------------------------
 
 
 ---------------------------------------------------------------------------------------------
+
 ## Setup
 
 All commands including imac-lighter-screen
@@ -68,10 +73,12 @@ SUBSYSTEM=="backlight", ACTION=="add", \
   RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness", \
   RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
 ```
+
 ---------------------------------------------------------------------------------------------
 
 
 ---------------------------------------------------------------------------------------------
+
 ## Usage
 
 ```bash
@@ -84,6 +91,7 @@ systemctl start imac-lighter
 # start auto adjust interactively, root previlege needed
 imac-lighter-ambient
 ```
+
 ---------------------------------------------------------------------------------------------
 
 
